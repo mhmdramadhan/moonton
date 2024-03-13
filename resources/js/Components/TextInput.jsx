@@ -1,6 +1,17 @@
-import { forwardRef, useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-export default forwardRef(function TextInput({ type = 'text', className = '', isFocused = false, ...props }, ref) {
+export default forwardRef(function TextInput(
+    {
+        type = PropTypes.oneOf(["text", "email", "password", "number", "file"]),
+        className = PropTypes.string,
+        variant = PropTypes.string,
+        isFocused = PropTypes.bool,
+        isError = PropTypes.bool,
+        ...props
+    },
+    ref
+) {
     const input = ref ? ref : useRef();
 
     useEffect(() => {
@@ -13,10 +24,9 @@ export default forwardRef(function TextInput({ type = 'text', className = '', is
         <input
             {...props}
             type={type}
-            className={
-                'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ' +
-                className
-            }
+            className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none ${
+                isError && "input-error"
+            } input-${variant} ${className}`}
             ref={input}
         />
     );
