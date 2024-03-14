@@ -1,13 +1,13 @@
 import InputLabel from "@/Components/InputLabel";
-import TextInput from "@/Components/TextInput";
 import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
 import { Link, Head } from "@inertiajs/react";
 import React from "react";
 
-const Login = () => {
+const Register = () => {
     return (
         <>
-            <Head title="Sign In" />
+            <Head title="Sign Up" />
             <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
@@ -21,7 +21,7 @@ const Login = () => {
                         <img src="/images/moonton-white.svg" alt="" />
                         <div className="my-[70px]">
                             <div className="font-semibold text-[26px] mb-3">
-                                Welcome Back
+                                Sign Up
                             </div>
                             <p className="text-base text-[#767676] leading-7">
                                 Explore our new movies and get <br />
@@ -32,42 +32,51 @@ const Login = () => {
                             <div className="flex flex-col gap-6">
                                 <div>
                                     <InputLabel
-                                        forInput="email"
-                                        value="Email Address"
+                                        forInput={"fullname"}
+                                        value={"Full Name"}
                                     />
                                     <TextInput
-                                        type="email"
-                                        name="email"
-                                        className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                                        placeholder="Email Address"
+                                        type="text"
+                                        name="fullname"
+                                        placeholder="Your fullname..."
+                                        defaultValue="Angga React"
                                     />
                                 </div>
                                 <div>
                                     <InputLabel
-                                        forInput="password"
-                                        value="Password"
+                                        forInput={"email"}
+                                        value={"Email Addres"}
+                                    />
+                                    <TextInput
+                                        type="email"
+                                        name="email"
+                                        placeholder="Your Email Address"
+                                        defaultValue="anggaforreact@fb.com"
+                                    />
+                                </div>
+                                <div>
+                                    <InputLabel
+                                        forInput={"password"}
+                                        value={"Password"}
                                     />
                                     <TextInput
                                         type="password"
                                         name="password"
-                                        className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                                        placeholder="Password"
+                                        placeholder="Your Password"
+                                        defaultValue="eeeeeeeeeeeeeee"
                                     />
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <PrimaryButton type="button" variant="primary">
+                                <PrimaryButton>
                                     <span className="text-base font-semibold">
-                                        Start Watching
+                                        Sign Up
                                     </span>
                                 </PrimaryButton>
-                                <Link href={route("prototype.register")}>
-                                    <PrimaryButton
-                                        type="button"
-                                        variant={"light-outline"}
-                                    >
+                                <Link href={route("prototype.login")}>
+                                    <PrimaryButton variant={"light-outline"}>
                                         <span className="text-base text-white">
-                                            Create New Account
+                                            Sign In to My Account
                                         </span>
                                     </PrimaryButton>
                                 </Link>
@@ -80,4 +89,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
