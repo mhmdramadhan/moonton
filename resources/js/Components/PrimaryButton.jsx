@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import '../../css/button.css'
+// import '../../css/button.css'
 
 PrimaryButton.propTypes = {
     className: PropTypes.string,
