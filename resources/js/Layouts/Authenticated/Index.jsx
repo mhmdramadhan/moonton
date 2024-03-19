@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
 
 const Authenticated = ({ children }) => {
     return (
@@ -13,6 +14,7 @@ const Authenticated = ({ children }) => {
                 <div className="ml-[300px] px-[50px]">
                     <div className="py-10 flex flex-col gap-[50px]">
                         {/* START: topbar */}
+                        <Topbar />
                         {/* END: topbar */}
 
                         <main>{children}</main>
