@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropType from "prop-types";
 
 const FeaturedMovie = ({ slug, name, category, thumbnail, rating }) => {
     return (
@@ -39,11 +39,11 @@ const FeaturedMovie = ({ slug, name, category, thumbnail, rating }) => {
 };
 
 FeaturedMovie.PropTypes = {
-    slug: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    rating: PropTypes.number,
+    slug: PropType.string.isRequired,
+    name: PropType.string.isRequired,
+    category: PropType.string.isRequired,
+    thumbnail: PropType.string.isRequired,
+    rating: PropType.number,
 };
 
 export default FeaturedMovie;
