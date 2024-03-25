@@ -1,13 +1,13 @@
 import { forwardRef, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
+import PropType from "prop-types";
 
 export default forwardRef(function TextInput(
     {
-        type = PropTypes.oneOf(["text", "email", "password", "number", "file"]),
-        className = PropTypes.string,
-        variant = PropTypes.string,
-        isFocused = PropTypes.bool,
-        isError = PropTypes.bool,
+        type = PropType.oneOf(["text", "email", "password", "number", "file"]),
+        className = PropType.string,
+        variant = PropType.string,
+        isFocused = PropType.bool,
+        isError = PropType.bool,
         ...props
     },
     ref
